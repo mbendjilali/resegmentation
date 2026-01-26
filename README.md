@@ -24,6 +24,40 @@ This repository contains a pipeline for semantic segmentation, instance extracti
 *   **`scripts/ablation.py`**: Configuration and logic for running ablation studies on model components.
 *   **`run_ablation_parallel.sh`**: Parallel runner for ablation experiments across multiple GPUs.
 
+## Multi-Dataset Support & Configuration
+
+This repository now supports training on multiple datasets (Forestry, Tree, Truck, Building, Pole) via configuration files located in `configs/`.
+
+### Supported Datasets & Classes
+*   **Forestry** (Default): Tree vs Undergrowth.
+*   **Tree**: Broadleaf vs Conifer.
+*   **Truck**: Pick-up, Van, Truck, Construction Vehicle.
+*   **Building**: House, Flat, Complex.
+*   **Pole**: Light Pole, Utility Pole, Traffic Pole.
+
+### Usage
+
+**1. Preprocessing:**
+Use `scripts/preprocess.py` with a config file to process LAZ files into training data.
+```bash
+python scripts/preprocess.py --config configs/truck.json
+```
+
+**2. Training:**
+Use `scripts/train.py` with the same config file to launch training with the correct parameters.
+```bash
+python scripts/train.py --config configs/truck.json
+```
+
+**Configuration Files:**
+Config files (JSON) specify:
+*   `dataset_name`: Name of the dataset (used for checkpoints).
+*   `data_dir`: Input directory containing LAZ files.
+*   `output_dir`: Output directory for processed .pt files.
+*   `num_points`: Number of points to sample.
+*   `task_type`: `binary_one_vs_rest` or `multiclass`.
+*   `class_mapping`: Mapping from LAZ class IDs to training labels (0, 1, ...).
+
 ## Installation
 
 Dependencies include:

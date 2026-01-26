@@ -1,0 +1,9 @@
+{
+    "dataset_name": "forestry",
+    "data_dir": "./data/forestry",
+    "output_dir": "./processed_data/forestry",
+    "num_points": 2048,
+    "task_type": "binary_one_vs_rest",
+    "target_class_id": 9,
+    "class_names": ["undergrowth", "tree"]
+}

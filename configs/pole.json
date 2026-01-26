@@ -1,0 +1,13 @@
+{
+    "dataset_name": "pole",
+    "data_dir": "./data/pole",
+    "output_dir": "./processed_data/pole",
+    "num_points": 2048,
+    "task_type": "multi_class",
+    "class_mapping": {
+        "9": 0,
+        "10": 1,
+        "11": 2
+    },
+    "class_names": ["light_pole", "utility_pole", "traffic_pole"]
+}

@@ -1,0 +1,14 @@
+{
+    "dataset_name": "truck",
+    "data_dir": "./data/truck",
+    "output_dir": "./processed_data/truck",
+    "num_points": 2048,
+    "task_type": "multi_class",
+    "class_mapping": {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 3
+    },
+    "class_names": ["pick_up", "van", "truck", "construction_vehicle"]
+}

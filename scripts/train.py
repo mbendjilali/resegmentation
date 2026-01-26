@@ -264,7 +264,7 @@ def main():
         # Evaluate SWA Model if available
         if swa_n_models > 0:
             print("Evaluating SWA Model...")
-            test_iou, test_loss = evaluate_single(swa_model, test_loader, desc="[Test SWA]")
+            test_iou, test_loss = evaluate_single(swa_model, test_loader, desc="[Test SWA]", num_classes=num_classes)
             print(f"Final Test mIoU (SWA): {test_iou:.2%}")
             print(f"Final Test Loss: {test_loss:.4f}")
         
@@ -273,7 +273,7 @@ def main():
         best_checkpoint_path = os.path.join(CHECKPOINT_DIR, f"best_std_model.pth")
         if os.path.exists(best_checkpoint_path):
             model.load_state_dict(torch.load(best_checkpoint_path))
-            test_iou, test_loss = evaluate_single(model, test_loader, desc="[Test Best]")
+            test_iou, test_loss = evaluate_single(model, test_loader, desc="[Test Best]", num_classes=num_classes)
             print(f"Final Test mIoU (Best Std): {test_iou:.2%}")
             print(f"Final Test Loss: {test_loss:.4f}")
 

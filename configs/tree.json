@@ -1,0 +1,12 @@
+{
+    "dataset_name": "tree",
+    "data_dir": "./data/tree",
+    "output_dir": "./processed_data/tree",
+    "num_points": 2048,
+    "task_type": "multi_class",
+    "class_mapping": {
+        "7": 0,
+        "8": 1
+    },
+    "class_names": ["broadleaf", "conifer"]
+}

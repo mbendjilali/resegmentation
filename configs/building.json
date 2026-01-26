@@ -1,0 +1,13 @@
+{
+    "dataset_name": "building",
+    "data_dir": "./data/building",
+    "output_dir": "./processed_data/building",
+    "num_points": 8192,
+    "task_type": "multi_class",
+    "class_mapping": {
+        "4": 0,
+        "5": 1,
+        "6": 2
+    },
+    "class_names": ["house", "flat", "complex"]
+}

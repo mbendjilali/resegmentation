@@ -291,6 +291,8 @@ def main():
             # Let's iterate and prepare
             
             for inst_id in instance_ids:
+                if inst_id == 0:
+                    continue
                 if 'PredInstance' in dim_names:
                     mask = (instances == inst_id)
                 else:
