@@ -21,8 +21,8 @@ echo "Activating environment: $ENV_NAME"
 conda activate $ENV_NAME
 
 echo "Installing PyTorch and CUDA toolkit (defaulting to CUDA 11.8 for compatibility)..."
-# You can change pytorch-cuda=11.8 to 12.1 if your system supports it.
-conda install -y pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+conda install -y torch torchvision torchaudio -c pytorch -c nvidia
 
 echo "Installing PyTorch Geometric (PyG)..."
 conda install -y pyg -c pyg
@@ -36,6 +36,7 @@ pip install \
     numpy \
     scipy \
     scikit-learn \
+    laspy \
     laspy[lazrs] \
     plyfile \
     optuna
