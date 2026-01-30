@@ -31,7 +31,7 @@ def process_file(file_path, output_path, config):
         intensity /= 65535.0 
         
         # 3. Extract SemClass and Labels based on Config
-        raw_classes = las.sub_class
+        raw_classes = las.sub
         
         task_type = config.get("task_type", "binary_one_vs_rest")
         
